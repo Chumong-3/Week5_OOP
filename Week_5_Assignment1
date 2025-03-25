@@ -1,0 +1,30 @@
+# Base class: Smartphone
+class Smartphone:
+    def __init__(self, brand, model, storage):
+        self.brand = brand
+        self.model = model
+        self.storage = storage
+
+    def show_info(self):
+        return f"{self.brand} {self.model} with {self.storage}GB storage."
+
+    def turn_on(self):
+        return "Powering on the smartphone..."
+
+# Subclass: AndroidPhone (inherits from Smartphone)
+class AndroidPhone(Smartphone):
+    def __init__(self, brand, model, storage, android_version):
+        super().__init__(brand, model, storage)
+        self.android_version = android_version
+
+    def show_info(self):
+        return f"{self.brand} {self.model} running Android {self.android_version} with {self.storage}GB storage."
+
+# Creating objects
+iphone = Smartphone("Apple", "iPhone 15", 128)
+samsung = AndroidPhone("Samsung", "Galaxy S23", 256, "13")
+
+# Output
+print(iphone.show_info())  # Apple iPhone 15 with 128GB storage.
+print(iphone.turn_on())    # Powering on the smartphone...
+print(samsung.show_info()) # Samsung Galaxy S23 running Android 13 with 256GB storage.
